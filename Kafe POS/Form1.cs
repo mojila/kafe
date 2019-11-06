@@ -13,7 +13,8 @@ namespace Kafe_POS
 {
     public partial class Form1 : Form
     {
-        private static string connectionString = @"Data Source=DESKTOP-LUG65OK\SQLEXPRESS;Initial Catalog=kafe;Integrated Security=True";
+        //private static string connectionString = @"Data Source=DESKTOP-LUG65OK\SQLEXPRESS;Initial Catalog=kafe;Integrated Security=True";
+        private static string connectionString = @"Data Source=MOJIA-PC\SQLEXPRESS;Initial Catalog=kafe;Integrated Security=True";
         SqlConnection sqlConnection = new SqlConnection(connectionString);
         Kasir kasir;
 
@@ -133,6 +134,24 @@ namespace Kafe_POS
             distributor.MdiParent = this;
             distributor.TopMost = true;
             distributor.Show();
+        }
+
+        private void pelangganToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Pelanggan pelanggan = new Pelanggan();
+
+            pelanggan.MdiParent = this;
+            pelanggan.TopMost = true;
+            pelanggan.Show();
+        }
+
+        private void pelangganToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Pelanggan pelanggan = new Pelanggan();
+
+            pelanggan.MdiParent = this;
+            pelanggan.TopMost = true;
+            pelanggan.Show();
         }
     }
 }

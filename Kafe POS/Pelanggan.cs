@@ -11,17 +11,21 @@ using System.Data.SqlClient;
 
 namespace Kafe_POS
 {
-    public partial class Satuan : Form
+    public partial class Pelanggan : Form
     {
-        //private static string connectionString = @"Data Source=DESKTOP-LUG65OK\SQLEXPRESS;Initial Catalog=kafe;Integrated Security=True";
         private static string connectionString = @"Data Source=MOJIA-PC\SQLEXPRESS;Initial Catalog=kafe;Integrated Security=True";
         SqlConnection sqlConnection = new SqlConnection(connectionString);
 
-        private void loadSatuan()
+        public Pelanggan()
+        {
+            InitializeComponent();
+        }
+
+        private void loadPelanggan()
         {
             sqlConnection.Open();
 
-            string query = "SELECT * FROM satuan";
+            string query = "SELECT * FROM pelanggan";
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, sqlConnection);
 
             SqlCommandBuilder sqlCommandBuilder = new SqlCommandBuilder(sqlDataAdapter);
@@ -34,20 +38,10 @@ namespace Kafe_POS
             return;
         }
 
-        public Satuan()
-        {
-            InitializeComponent();
-        }
-
-        private void Satuan_Load(object sender, EventArgs e)
-        {
-            loadSatuan();
-        }
-
-        private void createSatuan(string satuan)
+        private void createPelanggan(string nama, string alamat, string telepon)
         {
 
-            string query = "INSERT INTO satuan (satuan) VALUES ('"+satuan+"')";
+            string query = "INSERT INTO pelanggan (nama, alamat, telepon) VALUES ('" + nama + "', '" + alamat + "', '" + telepon + "')";
 
             using (SqlCommand sqlCommand = new SqlCommand(query))
             {
@@ -63,12 +57,20 @@ namespace Kafe_POS
             return;
         }
 
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Pelanggan_Load(object sender, EventArgs e)
+        {
+            loadPelanggan();
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            string satuan = textBox1.Text;
-
-            createSatuan(satuan);
-            loadSatuan();
+            createPelanggan(textBox1.Text, textBox2.Text, textBox3.Text);
+            loadPelanggan();
         }
     }
 }

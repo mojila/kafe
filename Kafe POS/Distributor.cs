@@ -13,7 +13,8 @@ namespace Kafe_POS
 {
     public partial class Distributor : Form
     {
-        private static string connectionString = @"Data Source=DESKTOP-LUG65OK\SQLEXPRESS;Initial Catalog=kafe;Integrated Security=True";
+        //private static string connectionString = @"Data Source=DESKTOP-LUG65OK\SQLEXPRESS;Initial Catalog=kafe;Integrated Security=True";
+        private static string connectionString = @"Data Source=MOJIA-PC\SQLEXPRESS;Initial Catalog=kafe;Integrated Security=True";
         SqlConnection sqlConnection = new SqlConnection(connectionString);
 
         public Distributor()
