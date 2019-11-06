@@ -31,12 +31,16 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.akunToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.barangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.satuanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.pembelianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.distributorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -44,7 +48,9 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.akunToolStripMenuItem});
+            this.akunToolStripMenuItem,
+            this.barangToolStripMenuItem,
+            this.pembelianToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(863, 24);
@@ -58,13 +64,30 @@
             this.akunToolStripMenuItem.Name = "akunToolStripMenuItem";
             this.akunToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
             this.akunToolStripMenuItem.Text = "Akun";
+            this.akunToolStripMenuItem.Click += new System.EventHandler(this.akunToolStripMenuItem_Click);
             // 
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
+            // 
+            // barangToolStripMenuItem
+            // 
+            this.barangToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.satuanToolStripMenuItem});
+            this.barangToolStripMenuItem.Name = "barangToolStripMenuItem";
+            this.barangToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.barangToolStripMenuItem.Text = "Barang";
+            this.barangToolStripMenuItem.Click += new System.EventHandler(this.barangToolStripMenuItem_Click);
+            // 
+            // satuanToolStripMenuItem
+            // 
+            this.satuanToolStripMenuItem.Name = "satuanToolStripMenuItem";
+            this.satuanToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.satuanToolStripMenuItem.Text = "Satuan";
+            this.satuanToolStripMenuItem.Click += new System.EventHandler(this.satuanToolStripMenuItem_Click);
             // 
             // groupBox1
             // 
@@ -79,6 +102,17 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Masuk";
+            // 
+            // button1
+            // 
+            this.button1.Enabled = false;
+            this.button1.Location = new System.Drawing.Point(23, 120);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(238, 31);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Masuk";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
             // 
@@ -116,24 +150,31 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nama Pengguna";
             // 
-            // button1
+            // pembelianToolStripMenuItem
             // 
-            this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(23, 120);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(238, 31);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Masuk";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.pembelianToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.distributorToolStripMenuItem});
+            this.pembelianToolStripMenuItem.Name = "pembelianToolStripMenuItem";
+            this.pembelianToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
+            this.pembelianToolStripMenuItem.Text = "Pembelian";
+            // 
+            // distributorToolStripMenuItem
+            // 
+            this.distributorToolStripMenuItem.Name = "distributorToolStripMenuItem";
+            this.distributorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.distributorToolStripMenuItem.Text = "Distributor";
+            this.distributorToolStripMenuItem.Click += new System.EventHandler(this.distributorToolStripMenuItem_Click_1);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Kafe_POS.Properties.Resources.wooden_table_with_view_blurred_beverages_bar_backdrop_43029_507;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(863, 443);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Kafe";
@@ -158,6 +199,10 @@
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripMenuItem barangToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem satuanToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pembelianToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem distributorToolStripMenuItem;
     }
 }
 
